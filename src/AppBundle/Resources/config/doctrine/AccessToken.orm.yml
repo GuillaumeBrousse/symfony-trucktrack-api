@@ -1,0 +1,18 @@
+AppBundle\Entity\AccessToken:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\AccessTokenRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        client:
+          targetEntity: AppBundle\Entity\Client
+          joinColumn:
+            nullable: true
+        user:
+          targetEntity: AppBundle\Entity\User
+    lifecycleCallbacks: {  }

@@ -1,0 +1,22 @@
+AppBundle\Entity\State:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\StateRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    oneToMany:
+        mission:
+          targetEntity: AppBundle\Entity\Mission
+          mappedBy: state
+        intervention:
+            targetEntity: AppBundle\Entity\Intervention
+            mappedBy: state
+    lifecycleCallbacks: {  }

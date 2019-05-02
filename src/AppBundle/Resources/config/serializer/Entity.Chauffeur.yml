@@ -1,0 +1,24 @@
+AppBundle\Entity\Chauffeur:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: integer
+      groups: [min_chauffeur, max_chauffeur, min_mission, max_mission, coords_chauffeur, select]
+    firstName:
+      groups: [min_chauffeur, max_chauffeur, min_mission, max_mission, coords_chauffeur, select]
+    lastName:
+      groups: [min_chauffeur, max_chauffeur, min_mission, max_mission, coords_chauffeur, select]
+    permis:
+      groups: [min_chauffeur, max_chauffeur]
+    suiviMission:
+      groups: [max_chauffeur]
+  virtual_properties:
+    getUsername:
+        serialized_name: username
+        groups: [max_chauffeur]
+    getEmail:
+      serialized_name: email
+      groups: [max_chauffeur]
+    getPosition:
+      serialized_name: position
+      groups: [coords_chauffeur]

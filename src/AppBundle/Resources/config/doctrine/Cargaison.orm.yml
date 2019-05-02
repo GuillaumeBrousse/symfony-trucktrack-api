@@ -1,0 +1,22 @@
+AppBundle\Entity\Cargaison:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\CargaisonRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: text
+        code:
+            type: string
+            length: 255
+            unique: true
+    oneToMany:
+        detailsMission:
+          targetEntity: AppBundle\Entity\DetailsMission
+          mappedBy: cargaison
+    lifecycleCallbacks: {  }

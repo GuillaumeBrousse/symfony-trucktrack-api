@@ -1,0 +1,42 @@
+AppBundle\Entity\SuiviMission:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\SuiviMissionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        vMax:
+            type: integer
+            nullable: true
+        vMoy:
+            type: integer
+            nullable: true
+    manyToOne:
+        chauffeur:
+          targetEntity: AppBundle\Entity\Chauffeur
+          inversedBy: suiviMission
+          joinColumns:
+            chauffeur_id:
+              referencedColumnName: id
+        vehicule:
+          targetEntity: AppBundle\Entity\Vehicule
+          inversedBy: suiviMission
+          joinColumns:
+            vehicule_id:
+              referencedColumnName: id
+    oneToOne:
+        mission:
+          targetEntity: AppBundle\Entity\Mission
+          mappedBy: suiviMission
+        intervention:
+          targetEntity: AppBundle\Entity\Intervention
+          mappedBy: suiviMission
+    oneToMany:
+        tracks:
+          targetEntity: AppBundle\Entity\Tracks
+          mappedBy: suiviMission
+    lifecycleCallbacks: {  }

@@ -1,0 +1,20 @@
+AppBundle\Entity\TypeVehicule:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\TypeVehiculeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+    oneToMany:
+        vehicule:
+          targetEntity: AppBundle\Entity\Vehicule
+          mappedBy: typeVehicule
+
+    lifecycleCallbacks: {  }

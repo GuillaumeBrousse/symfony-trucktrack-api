@@ -1,0 +1,8 @@
+AppBundle\Entity\State:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: integer
+      groups: [min_mission, max_mission, min_intervention, max_intervention, min_incident, max_incident, select]
+    name:
+      groups: [min_mission, max_mission, min_intervention, max_intervention, min_incident, max_incident, select]

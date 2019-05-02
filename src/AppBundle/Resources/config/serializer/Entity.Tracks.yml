@@ -1,0 +1,10 @@
+AppBundle\Entity\Tracks:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: integer
+      groups: [max_mission]
+    longitude:
+      groups: [coords_chauffeur, min_mission, max_mission]
+    latitude:
+      groups: [coords_chauffeur, min_mission, max_mission]

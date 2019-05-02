@@ -1,0 +1,48 @@
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+# user:
+#     resource: "@AppBundle/Resources/config/routing/user.yml"
+#     prefix:   /user
+
+# client:
+#     resource: "@AppBundle/Resources/config/routing/client.yml"
+#     prefix:   /client
+
+# chauffeur:           
+#     resource: "@AppBundle/Resources/config/routing/chauffeur.yml"
+#     prefix:   /chauffeur 
+
+# vehicule:                                                   
+#    resource: "@AppBundle/Resources/config/routing/vehicule.yml"
+#    prefix:   /vehicule                                         
+
+# typevehicule:                                                   
+#     resource: "@AppBundle/Resources/config/routing/typevehicule.yml"
+#     prefix:   /typevehicule 
+
+# remettant:                                                   
+#     resource: "@AppBundle/Resources/config/routing/remettant.yml"
+#     prefix:   /remettant    
+
+# destinataire:                                                   
+#     resource: "@AppBundle/Resources/config/routing/destinataire.yml"
+#     prefix:   /destinataire                                         
+
+# cargaison:                                                   
+#     resource: "@AppBundle/Resources/config/routing/cargaison.yml"
+#     prefix:   /cargaison                                         
+
+# detailsmission:                                                   
+#     resource: "@AppBundle/Resources/config/routing/detailsmission.yml"
+#     prefix:   /detailsmission                                         
+
+fos_oauth_server_token:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
+
+fos_oauth_server_authorize:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/authorize.xml"                                       
+
+api:                                                   
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix:   /api

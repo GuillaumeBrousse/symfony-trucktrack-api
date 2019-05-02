@@ -1,0 +1,38 @@
+AppBundle\Entity\DetailsMission:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\DetailsMissionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        destinataire:
+          targetEntity: AppBundle\Entity\Destinataire
+          inversedBy: detailsMission
+          joinColumns:
+            destinataire_id:
+              referencedColumnName: id
+              nullable: false
+        remettant:
+          targetEntity: AppBundle\Entity\Remettant
+          inversedBy: detailsMission
+          joinColumns:
+            remettant_id:
+              referencedColumnName: id
+              nullable: false
+        cargaison:
+          targetEntity: AppBundle\Entity\Cargaison
+          inversedBy: detailsMission
+          joinColumns:
+            cargaison_id:
+              referencedColumnName: id
+              nullable: false
+          cascade: ["persist"]
+    oneToOne:
+        mission:
+          targetEntity: AppBundle\Entity\mission
+          mappedBy: detailsMission
+    lifecycleCallbacks: {  }

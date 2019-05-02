@@ -1,0 +1,10 @@
+AppBundle\Entity\Destinataire:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: integer
+      groups: [min_destinataire, max_mission, select]
+    name:
+      groups: [min_destinataire, min_mission, max_mission, select]
+    address:
+      groups: [min_destinataire, min_mission, max_mission, select]

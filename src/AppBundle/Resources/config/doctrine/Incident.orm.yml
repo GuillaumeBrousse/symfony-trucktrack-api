@@ -1,0 +1,31 @@
+AppBundle\Entity\Incident:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\IncidentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: text
+        latitude:
+            type: decimal
+            precision: 10
+            scale: '7'
+        longitude:
+            type: decimal
+            precision: 10
+            scale: '7'
+        created:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create 
+    oneToOne:
+        intervention:
+          targetEntity: AppBundle\Entity\Intervention
+          mappedBy: incident
+    lifecycleCallbacks: {  }

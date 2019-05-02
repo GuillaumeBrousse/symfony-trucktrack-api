@@ -1,0 +1,10 @@
+AppBundle\Entity\Technicien:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: integer
+      groups: [max_incident, max_intervention]
+    firstName:
+      groups: [max_incident, max_intervention]
+    lastName:
+      groups: [max_incident, max_intervention]

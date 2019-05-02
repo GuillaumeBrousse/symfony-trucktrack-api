@@ -1,0 +1,53 @@
+AppBundle\Entity\Mission:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\MissionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        description:
+            type: text
+        tempsReel:
+            type: bigint
+            nullable: true
+        tempsEstime:
+            type: bigint
+        date:
+            type: datetime
+    manyToOne:
+        client:
+          targetEntity: AppBundle\Entity\Client
+          inversedBy: mission
+          joinColumns:
+            client_id:
+              referencedColumnName: id
+              nullable: false
+        state:
+          targetEntity: AppBundle\Entity\State
+          inversedBy: mission
+          joinColumns:
+            state_id:
+              referencedColumnName: id
+              nullable: false
+    oneToOne:
+        detailsMission:
+          targetEntity: AppBundle\Entity\DetailsMission
+          inversedBy: mission
+          joinColumns:
+            detailsMission_id:
+              referencedColumnName: id
+              nullable: false
+          cascade: ["persist"]
+        suiviMission:
+          targetEntity: AppBundle\Entity\SuiviMission
+          inversedBy: mission
+          joinColumns:
+            suiviMission_id:
+              referencedColumnName: id
+              nullable: false
+          cascade: ["persist"]
+    lifecycleCallbacks: {  }

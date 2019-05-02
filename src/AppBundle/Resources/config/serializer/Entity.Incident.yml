@@ -1,0 +1,16 @@
+AppBundle\Entity\Incident:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: integer
+      groups: [min_incident, max_incident]
+    description:
+      groups: [min_incident, max_incident]
+    date:
+      groups: [min_incident, max_incident]
+    latitude:
+      groups: [max_incident]
+    longitude:
+      groups: [max_incident]
+    intervention:
+      groups: [min_incident, max_incident]

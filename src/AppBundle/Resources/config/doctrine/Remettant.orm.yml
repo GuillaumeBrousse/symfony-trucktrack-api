@@ -1,0 +1,22 @@
+AppBundle\Entity\Remettant:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\RemettantRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        address:
+            type: string
+            length: 255
+    oneToMany:
+        detailsMission:
+          targetEntity: AppBundle\Entity\DetailsMission
+          mappedBy: remettant
+    lifecycleCallbacks: {  }

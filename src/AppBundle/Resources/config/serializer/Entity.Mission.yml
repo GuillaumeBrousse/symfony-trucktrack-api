@@ -1,0 +1,25 @@
+AppBundle\Entity\Mission:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: integer
+      groups: [min_mission, max_mission, max_chauffeur]
+    description:
+      type: string
+      groups: [min_mission, max_mission, max_chauffeur]
+    state:
+      groups: [min_mission, max_mission, max_chauffeur]
+    date:
+      groups: [min_mission, max_mission, max_chauffeur]
+    tempsReel:
+      groups: [max_mission]
+    tempsEstime:
+      groups: [min_mission, max_mission]
+    detailsMission:
+      groups: [min_mission, max_mission]
+    suiviMission:
+      groups: [max_mission]
+  virtual_properties:
+        getChauffeur:
+            serialized_name: chauffeur
+            groups: [min_mission]

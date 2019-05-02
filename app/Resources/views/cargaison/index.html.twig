@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Cargaisons list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Code</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cargaison in cargaisons %}
+            <tr>
+                <td><a href="{{ path('cargaison_show', { 'id': cargaison.id }) }}">{{ cargaison.id }}</a></td>
+                <td>{{ cargaison.description }}</td>
+                <td>{{ cargaison.code }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('cargaison_show', { 'id': cargaison.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('cargaison_edit', { 'id': cargaison.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cargaison_new') }}">Create a new cargaison</a>
+        </li>
+    </ul>
+{% endblock %}

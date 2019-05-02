@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Remettants list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for remettant in remettants %}
+            <tr>
+                <td><a href="{{ path('remettant_show', { 'id': remettant.id }) }}">{{ remettant.id }}</a></td>
+                <td>{{ remettant.name }}</td>
+                <td>{{ remettant.address }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('remettant_show', { 'id': remettant.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('remettant_edit', { 'id': remettant.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('remettant_new') }}">Create a new remettant</a>
+        </li>
+    </ul>
+{% endblock %}

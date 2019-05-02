@@ -1,0 +1,40 @@
+api_chauffeur:
+    type:      rest
+    resource:  AppBundle\Controller\ChauffeurController
+    prefix:    /chauffeur
+
+api_client:
+    type:      rest
+    resource:  AppBundle\Controller\ClientController
+    prefix:    /client
+
+api_user:
+    type:      rest
+    resource:  AppBundle\Controller\UserController
+    prefix:    /user
+
+api_mission:
+    type:      rest
+    resource:  AppBundle\Controller\MissionController
+    prefix:    /mission
+
+api_remettant:
+    type:      rest
+    resource:  AppBundle\Controller\RemettantController
+    prefix:    /remettant
+
+api_destinataire:
+    type:      rest
+    resource:  AppBundle\Controller\DestinataireController
+    prefix:    /destinataire
+
+api_incident:
+    type:      rest
+    resource:  AppBundle\Controller\IncidentController
+    prefix:    /incident
+
+api_tracks:
+    type:      rest
+    resource:  AppBundle\Controller\TracksController
+    prefix:    /tracks
+

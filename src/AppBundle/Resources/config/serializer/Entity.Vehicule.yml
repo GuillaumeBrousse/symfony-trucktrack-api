@@ -1,0 +1,20 @@
+AppBundle\Entity\Vehicule:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: integer
+      groups: [max_mission, min_vehicule, max_incident, max_intervention, select]
+    immatriculation:
+      groups: [max_mission, min_vehicule, max_incident, max_intervention, select]
+    compteurKm:
+      groups: [max_vehicule]
+    state:
+      groups: [max_vehicule]
+    isIntervention:
+      groups: [max_vehicule]
+    assurance:
+      groups: [max_vehicule]
+    ct:
+      groups: [max_vehicule]
+    typeVehicule:
+      groups: [max_vehicule]

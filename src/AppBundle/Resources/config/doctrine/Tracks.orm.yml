@@ -1,0 +1,32 @@
+AppBundle\Entity\Tracks:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\TracksRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        latitude:
+            type: decimal
+            precision: 10
+            scale: '7'
+        longitude:
+            type: decimal
+            precision: 10
+            scale: '7'
+        created:
+          type: datetime
+          gedmo:
+            timestampable:
+              on: create 
+    manyToOne:
+        suiviMission:
+          targetEntity: AppBundle\Entity\SuiviMission
+          inversedBy: tracks
+          joinColumns:
+            suiviMission_id:
+              referencedColumnName: id       
+    lifecycleCallbacks: {  }

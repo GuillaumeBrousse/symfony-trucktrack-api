@@ -1,0 +1,48 @@
+AppBundle\Entity\Intervention:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\InterventionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        technicien:
+          targetEntity: AppBundle\Entity\Technicien
+          inversedBy: intervention
+          joinColumns:
+            technicien_id:
+              referencedColumnName: id
+              nullable: false 
+        vehicule:
+          targetEntity: AppBundle\Entity\Vehicule
+          inversedBy: intervention
+          joinColumns:
+            vehicule_id:
+              referencedColumnName: id
+              nullable: false 
+        state:
+          targetEntity: AppBundle\Entity\State
+          inversedBy: intervention
+          joinColumns:
+            state_id:
+              referencedColumnName: id
+              nullable: false      
+    oneToOne:
+        incident:
+          targetEntity: AppBundle\Entity\Incident
+          inversedBy: intervention
+          joinColumns:
+            incident_id:
+              referencedColumnName: id
+              nullable: false
+        suiviMission:
+          targetEntity: AppBundle\Entity\SuiviMission
+          inversedBy: intervention
+          joinColumns:
+            suiviMission_id:
+              referencedColumnName: id
+              nullable: false 
+    lifecycleCallbacks: {  }

@@ -1,0 +1,10 @@
+AppBundle\Entity\Cargaison:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: integer
+      groups: [cargaison]
+    description:
+      groups: [cargaison, min_mission, max_mission]
+    code:
+      groups: [cargaison, min_mission, max_mission]

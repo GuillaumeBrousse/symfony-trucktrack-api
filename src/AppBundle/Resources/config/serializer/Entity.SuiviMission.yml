@@ -1,0 +1,20 @@
+AppBundle\Entity\SuiviMission:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: integer
+      groups: [max_mission, max_chauffeur]
+    vMax:
+      groups: [max_mission]
+    vMoy:
+      groups: [max_mission]
+    vehicule:
+      groups: [max_mission, max_chauffeur]
+    chauffeur:
+      groups: [max_mission]
+    mission:
+      groups: [max_chauffeur]
+    tracks:
+      groups: [max_mission]
+    interventon:
+      groups: [max_mission]

@@ -1,0 +1,42 @@
+AppBundle\Entity\Chauffeur:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ChauffeurRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        firstName:
+            type: string
+            length: 255
+        lastName:
+            type: string
+            length: 255
+        permis:
+            type: string
+            length: 255
+            unique: true
+    oneToOne:
+        user:
+          targetEntity: AppBundle\Entity\User
+          inversedBy: chauffeur
+          joinColumns:
+            user_id:
+              referencedColumnName: id
+              nullable: false
+    manyToOne:
+        client:
+          targetEntity: AppBundle\Entity\Client
+          inversedBy: chauffeur
+          joinColumns:
+            client_id:
+              referencedColumnName: id
+              nullable: false
+    oneToMany:
+        suiviMission:
+          targetEntity: AppBundle\Entity\SuiviMission
+          mappedBy: chauffeur
+    lifecycleCallbacks: {  }

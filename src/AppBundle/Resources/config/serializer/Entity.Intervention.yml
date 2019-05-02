@@ -1,0 +1,15 @@
+AppBundle\Entity\Intervention:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: integer
+      groups: [min_intervention, max_intervention, max_mission, min_incident, max_incident]
+    state:
+      groups: [min_intervention, max_intervention, max_mission, min_incident, max_incident]
+    technicien:
+      groups: [min_intevention, max_intervention, max_incident]
+    vehicule:
+      groups: [min_intevention, max_intervention, max_incident]
+    incident:
+      groups: [max_intervention]
+

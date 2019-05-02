@@ -1,0 +1,44 @@
+AppBundle\Entity\Client:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ClientRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        siren:
+            type: string
+            length: 255
+            unique: true
+        app_name:
+          type: string
+          length: 255
+          nullable: true
+        description:
+          type: text
+          nullable: true
+    oneToOne:
+        user:
+          targetEntity: AppBundle\Entity\User
+          inversedBy: client
+          joinColumns:
+            user_id:
+              referencedColumnName: id
+              nullable: false
+    oneToMany:
+        chauffeur:
+          targetEntity: AppBundle\Entity\Chauffeur
+          mappedBy: client
+        mission:
+          targetEntity: AppBundle\Entity\Mission
+          mappedBy: client
+        vehicule:
+          targetEntity: AppBundle\Entity\Vehicule
+          mappedBy: client
+    lifecycleCallbacks: {  }

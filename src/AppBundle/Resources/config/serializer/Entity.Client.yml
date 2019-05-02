@@ -1,0 +1,19 @@
+AppBundle\Entity\Client:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: integer
+      groups: [client]
+    name:
+      type: string
+      groups: [client]
+    siren:
+      type: string
+      groups: [client]
+  virtual_properties:
+    getUsername:
+        serialized_name: username
+        groups: [client]
+    getEmail:
+        serialized_name: email
+        groups: [client]

@@ -1,0 +1,10 @@
+AppBundle\Entity\TypeVehicule:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: integer
+      groups: [min_typeVehicule]
+    name:
+      groups: [min_typeVehicule]
+    vehicule:
+      groups: [max_typeVehicule]

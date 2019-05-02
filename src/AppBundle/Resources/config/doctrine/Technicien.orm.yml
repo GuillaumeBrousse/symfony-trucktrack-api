@@ -1,0 +1,22 @@
+AppBundle\Entity\Technicien:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\TechnicienRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        firstName:
+            type: string
+            length: 255
+        lastName:
+            type: string
+            length: 255
+    oneToMany:
+        intervention:
+          targetEntity: AppBundle\Entity\Intervention
+          mappedBy: technicien
+    lifecycleCallbacks: {  }

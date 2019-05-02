@@ -1,0 +1,12 @@
+AppBundle\Entity\DetailsMission:
+  exclusion_policy: ALL
+  properties:
+    id:
+      type: integer
+      groups: [min_mission, max_mission]
+    destinataire:
+      groups: [min_mission, max_mission]
+    remettant:
+      groups: [min_mission, max_mission]
+    cargaison:
+      groups: [min_mission, max_mission]

@@ -1,0 +1,50 @@
+AppBundle\Entity\Vehicule:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\VehiculeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        immatriculation:
+            type: string
+            length: 255
+            unique: true
+        compteurKm:
+            type: integer
+        state:
+            type: boolean
+        isIntervention:
+            type: boolean
+        assurance:
+            type: datetime
+            nullable: true
+        ct:
+            type: datetime
+            nullable: true
+    manyToOne:
+        client:
+          targetEntity: AppBundle\Entity\Client
+          inversedBy: vehicule
+          joinColumns:
+            client_id:
+              referencedColumnName: id
+              nullable: true
+        typeVehicule:
+          targetEntity: AppBundle\Entity\TypeVehicule
+          inversedBy: vehicule
+          joinColumns:
+            typeVehicule_id:
+              referencedColumnName: id
+              nullable: true
+    oneToMany:
+        intervention:
+          targetEntity: AppBundle\Entity\Intervention
+          mappedBy: vehicule
+        suiviMission:
+          targetEntity: AppBundle\Entity\SuiviMission
+          mappedBy: vehicule
+    lifecycleCallbacks: {  }
